@@ -1,0 +1,30 @@
+Server
+    => always listening for the incoming requests
+        => accepts the connection
+            => receive incoming username and password and verify them
+            => if verified
+                => keep on listening to this user and other users.
+            => else
+                close this socket immediately
+
+    1. Provides user verification <->
+    2. A maximum of 5 users can connect to the server simultaneously <->
+    3. If a user is idle for more than 1 minute, get its socket from HashTable and closes its connection and simultaneous close the socket on the client too. <->
+    4. Can only provide access to a certain folder on server machine. always send an array of strings. when not in root send an empty string indicating
+       back folder. <->
+    5. When a file upload request is made, first check if the same file is already uploaded ihe current opened directory, if not then permit, otherwise
+       send a response with error code to the user. User parses the error code and displays the error.
+
+User
+    => will enter his username and password to be able to get into the system
+    => if yes
+        => see a screen with a text area
+            => it will show the files in the root directory available for the users in each line with the image of folder
+            => if user moves down, one directory also displays a back folder icon with three dots
+            => double clicking a folder should open the folder
+            => It will receive the directory names as an array of strings. Make this array an observable and make the text area observer,
+               so that whenever the array is changed it will automatically render the changes in the text area.
+            => upload button -> file chooser, enable user to select any type of file of size must be less <= 5mbs
+    => else
+        => username and password combination does not match
+        => enter again or exit as u require.
