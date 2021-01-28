@@ -58,13 +58,9 @@ Your Server side should have the following functionalities:
 Your Client side should have the following functionalities:
 
 6. Create a socket at client side
-
 7. Send request to the server.
-
 8. Now when server is ready to accept the request then client is prompted to enter its details along with passwords.
-
 9. Once the authentication is successfully done then client may send any number of files to the server in one go.
-
 10. After successfully sending file client may terminate or re-request the server to send more files.
 
 You should try to make the client as simple as possible. Most of the work in this assignment is focused on the server.
